@@ -32,3 +32,175 @@
 #submit-btn {
   width: 110px;
 }
+
+@charset "utf-8";
+/* CSS for html5 video */
+
+.video-player {
+  background: none repeat scroll 0 0 #1B1B1B;
+    border: 5px solid #2379CF;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.video-controls {
+  display: block;
+  clear: both;
+  float: left;
+  padding-top: 5px;
+  position: relative;
+  width: 100%;
+}
+.video-rewind {
+    background: url('../img/icon_rewind.png') no-repeat;
+    display: block;
+    float: left;
+    height: 17px;
+    margin-right: 8px;
+    width: 17px;
+}
+
+.video-play {
+  background: url('../img/icon_play.png') no-repeat;
+  display: block;
+  float: left;
+  height: 15px;
+  margin-right: 8px;
+  width: 12px;
+}
+
+.paused-button {
+  background: url('../img/icon_pause.png') no-repeat;
+}
+
+/* SEEK BAR STUFF */
+.video-seek {
+  background-color: #757575;
+    border: 1px solid #2679CB;
+    float: left;
+    height: 10px;
+    margin-left: 6px;
+    margin-top: 2px;
+    position: relative;
+    width: 66%;/*300px;*/
+}
+
+.video-seek .ui-slider-handle {
+    background: #E6E6E6;
+    border: 1px solid #333333;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 -3px 3px #D5D5D5 inset;
+    height: 15px;
+    top: -4px;
+    width: 15px;
+}
+
+.ui-slider-handle {
+    cursor: default;
+    display: block;
+    margin-left: -0.6em;
+    outline: medium none;
+    position: absolute;
+    z-index: 2;
+}
+
+.ui-slider-range {
+    background: #4CBAE8;
+    box-shadow: 0 -3px 3px #39A2CE inset;
+    border: 0 none;
+    bottom: 0;
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+
+.video-timer {
+  color: #757575;
+  float: left;
+  font-size: 10px;
+  margin: 2px 0 0 8px;
+}
+
+.volume-box {
+    bottom: 0;
+    color: #FFFFFF;
+    float: left;
+    height: 30px;
+    overflow: hidden;
+    padding: 0 10px;
+    position: absolute;
+    right: 18px;
+    width: 20px;
+}
+
+.volume-box:hover {
+    height: 135px;
+    padding-top: 5px;
+}
+
+.volume-box:hover .volume-slider {
+    opacity: 1;
+    position: relative;
+    visibility: visible;
+}
+
+.volume-slider {
+    background: #757575;
+    border: 1px solid #2679CB;
+    height: 100px;
+    left: 4px;
+    opacity: 0;
+    position: relative;
+    transition: all 0.1s ease-in-out 0s;
+    width: 7px;
+}
+
+.volume-slider .ui-slider-range {
+    background: #3CA7D4;
+    box-shadow: 0 3px 3px #D5D5D5 inset;
+}
+
+.volume-slider .ui-slider-handle {
+    background: #E6E6E6;
+    border: 1px solid #333333;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 3px 3px #D5D5D5 inset;
+    height: 12px;
+    left: -4px;
+    margin-bottom: -0.6em;
+    margin-left: 0;
+    width: 12px;
+}
+
+.volume-button {
+    background: url('../img/icon_volume.png') no-repeat;
+    bottom: 3px;
+    display: block;
+    height: 14px;
+    opacity: 0.8;
+    position: absolute;
+    text-indent: -9999px;
+    width: 14px;
+}
+
+.volume-mute {
+    background: url('../img/icon_volumeMute.png') no-repeat;
+}
+
+.volume-button:hover {
+    opacity: 1;
+}
+
+.fullscreen {
+    background: url('../img/icon_fullscreen.png') no-repeat;
+    bottom: 0;
+    display: block;
+    height: 18px;
+    position: absolute;
+    right: 0;
+    text-indent: -9999px;
+    width: 22px;
+}
