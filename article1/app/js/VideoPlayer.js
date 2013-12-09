@@ -3,16 +3,16 @@
 /* Controllers */
 
 angular.module('myApp.VideoPlayer', []).
-  controller('videoPlayerCtrl', ['$scope', function(scope, model) {
+  controller('videoPlayerCtrl', ['$scope', '$rootScope', function(scope, rootScope) {
   	scope.playState = 'paused';
-  	scope.muteState = 'volumeState';
   	
-  	// scope.onPlayPause = function( event ) {
-  	// 	scope.$broadcast('playing');
-  	// }
-
-  	scope.durationChange = function(event) {
-  		console.log("playstate handler");
+  	scope.onPlayPause = function() {
+  		if(scope.playState === 'pause') {
+        scope.playState = 'playing' ;
+      } else {
+        scope.playState = 'pause';
+      }
+      rootScope.$broadcast('playStateChanged', scope.playState);
   	}
   }])  
   .directive('controlBar', function() {
@@ -21,6 +21,7 @@ angular.module('myApp.VideoPlayer', []).
   		replace: true,
   		templateUrl: 'partials/control-bar.html',
   		link: function(scope, element, attrs) {
+
   		}
     };	
   })
@@ -31,13 +32,15 @@ angular.module('myApp.VideoPlayer', []).
   		controller: 'videoPlayerCtrl',
   		templateUrl: 'partials/video.html',
   		link: function(scope, element, attrs) {
-  			element.bind( 'progress', function(){
-  				console.log('woot');
-  			});
+        var player = element[0];
 
-  			scope.onPlayPause = function(){
-  									element[0].play();
-  								};
+  			scope.$on( 'playStateChanged', function(event, data) {
+          if(data === 'pause') {
+            player.play();
+          } else {
+            player.pause();
+          }
+				});
   		}
     };
   })

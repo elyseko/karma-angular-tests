@@ -35,19 +35,24 @@
 
 @charset "utf-8";
 /* CSS for html5 video */
+.video-player-container {
+  width: 640px;
+}
 
 .video-player {
   background: none repeat scroll 0 0 #1B1B1B;
-    border: 5px solid #2379CF;
-    border-radius: 5px 5px 5px 5px;
+    //border: 5px solid #2379CF;
+    //border-radius: 5px 5px 5px 5px;
 }
 
 .video-controls {
-  display: block;
+  display: relative;
+  background: #333;
   clear: both;
   float: left;
-  padding-top: 5px;
+  padding: 5px 0 5px 5px;
   position: relative;
+  box-sizing: border-box;
   width: 100%;
 }
 .video-rewind {
@@ -60,7 +65,6 @@
 }
 
 .video-play {
-  background: url('../img/icon_play.png') no-repeat;
   display: block;
   float: left;
   height: 15px;
@@ -68,20 +72,24 @@
   width: 12px;
 }
 
-.paused-button {
+.video-play.paused {
+  background: url('../img/icon_play.png') no-repeat;
+}
+
+.video-play.playing {
   background: url('../img/icon_pause.png') no-repeat;
 }
 
 /* SEEK BAR STUFF */
 .video-seek {
   background-color: #757575;
-    border: 1px solid #2679CB;
+    border: 1px solid #999;
     float: left;
     height: 10px;
     margin-left: 6px;
     margin-top: 2px;
     position: relative;
-    width: 66%;/*300px;*/
+    width: 85%;
 }
 
 .video-seek .ui-slider-handle {
@@ -132,7 +140,7 @@
     overflow: hidden;
     padding: 0 10px;
     position: absolute;
-    right: 18px;
+    right: 25px;
     width: 20px;
 }
 
@@ -177,7 +185,7 @@
 
 .volume-button {
     background: url('../img/icon_volume.png') no-repeat;
-    bottom: 3px;
+    bottom: 5px;
     display: block;
     height: 14px;
     opacity: 0.8;
@@ -186,7 +194,7 @@
     width: 14px;
 }
 
-.volume-mute {
+.volume-button.mute {
     background: url('../img/icon_volumeMute.png') no-repeat;
 }
 
@@ -196,11 +204,15 @@
 
 .fullscreen {
     background: url('../img/icon_fullscreen.png') no-repeat;
-    bottom: 0;
+    bottom: 3px;
     display: block;
     height: 18px;
     position: absolute;
-    right: 0;
+    right: 8px;
     text-indent: -9999px;
     width: 22px;
+}
+
+.disabled {
+  opacity: .1;
 }
