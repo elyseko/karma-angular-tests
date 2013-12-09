@@ -20,30 +20,30 @@ describe('Video Player', function(){
 
 	it(' onPlayPause sets playState to playing', function() {
 		scope.onPlayPause();
-		expect(scope.playState).toBe('playing');
-	});
+		expect(scope.playState).toBe(scope.PLAYING);
+	});	
 
 	it(' onPlayPause sets playState to paused', function() {
 		scope.$apply(function(){
-			scope.playState = 'playing';
+			scope.playState = scope.PLAYING;
 		});
 		scope.onPlayPause();
-		expect(scope.playState).toBe('paused');
+		expect(scope.playState).toBe(scope.PAUSED);
 	});
 
 	it(' onPlayPause dispatches playing state', function() {
 		spyOn(rootScope, '$broadcast');
 		scope.onPlayPause();
-		expect(scope.$broadcast).toHaveBeenCalledWith('playStateEvent', 'playing');
+		expect(rootScope.$broadcast).toHaveBeenCalledWith(scope.PLAY_STATE_EVENT, scope.PLAYING);
 	});
 
 	it(' onPlayPause dispatches playing state', function() {
 		scope.$apply(function(){
-			scope.playState = 'playing';
+			scope.playState = scope.PLAYING;
 		});
 		spyOn(rootScope, '$broadcast');
 		scope.onPlayPause();
-		expect(scope.$broadcast).toHaveBeenCalledWith('playStateEvent', 'paused');
+		expect(rootScope.$broadcast).toHaveBeenCalledWith(scope.PLAY_STATE_EVENT, scope.PAUSED);
 	});
 
   });

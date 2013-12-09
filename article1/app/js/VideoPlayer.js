@@ -4,15 +4,20 @@
 
 angular.module('myApp.VideoPlayer', []).
   controller('videoPlayerCtrl', ['$scope', '$rootScope', function(scope, rootScope) {
-  	scope.playState = 'paused';
+
+    scope.PLAYING = "playing";
+    scope.PAUSED = "paused";
+    scope.PLAY_STATE_EVENT = "event::playStateChanged";
+
+  	scope.playState = scope.PAUSED;
   	
   	scope.onPlayPause = function() {
-  		if(scope.playState === 'pause') {
-        scope.playState = 'playing' ;
+  		if(scope.playState === scope.PAUSED) {
+        scope.playState = scope.PLAYING;
       } else {
-        scope.playState = 'pause';
+        scope.playState = scope.PAUSED;
       }
-      rootScope.$broadcast('playStateChanged', scope.playState);
+      rootScope.$broadcast(scope.PLAY_STATE_EVENT, scope.playState);
   	}
   }])  
   .directive('controlBar', function() {
@@ -34,8 +39,8 @@ angular.module('myApp.VideoPlayer', []).
   		link: function(scope, element, attrs) {
         var player = element[0];
 
-  			scope.$on( 'playStateChanged', function(event, data) {
-          if(data === 'pause') {
+  			scope.$on( scope.PLAY_STATE_EVENT, function(event, data) {
+          if(data === scope.PAUSED) {
             player.play();
           } else {
             player.pause();

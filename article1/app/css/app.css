@@ -65,15 +65,12 @@
 }
 
 .video-play {
+  background: url('../img/icon_play.png') no-repeat;
   display: block;
   float: left;
   height: 15px;
   margin-right: 8px;
   width: 12px;
-}
-
-.video-play.paused {
-  background: url('../img/icon_play.png') no-repeat;
 }
 
 .video-play.playing {
