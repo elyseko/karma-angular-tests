@@ -40,7 +40,7 @@ angular.module('myApp.VideoPlayer', []).
         var player = element[0];
 
   			scope.$on( scope.PLAY_STATE_EVENT, function(event, data) {
-          if(data === scope.PAUSED) {
+          if(data === scope.PLAYING) {
             player.play();
           } else {
             player.pause();
