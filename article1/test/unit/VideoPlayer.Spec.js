@@ -47,4 +47,30 @@ describe('Video Player', function(){
 	});
 
   });
+
+  describe(' directive', function(){
+
+  	beforeEach(module('partials/video-player.html'));
+
+  	var rootScope;
+  	var scope;
+	var elm;
+		
+	beforeEach( 
+		inject(function($rootScope, $compile, $templateCache) {
+			scope = $rootScope.new();
+			rootScope = $rootScope;
+			elm = '<video-player></video-player>';
+
+		    $compile(elm)(scope);
+		    scope.$digest();
+		})
+	);
+
+	it(' on PLAY_STATE_EVENT == playing, plays the video', function() {
+		rootScope.$broadcast('event::playStateChanged', 'playing');
+		expect(elm[0].playing).toBe(true);
+	});
+
+  });
 });

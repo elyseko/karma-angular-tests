@@ -3,7 +3,11 @@ module.exports = function(config){
     basePath : '../',
 
     preprocessors: {
-      '**/*tpl.html': ['ng-html2js']
+      'app/**/*.tpl.html': ['ng-html2js']
+    },
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'app/',
     },
 
     files : [
@@ -11,14 +15,14 @@ module.exports = function(config){
       'app/lib/angular/angular-*.js',
       'test/lib/angular/angular-mocks.js',
       'app/js/**/*.js',
-      'test/unit/**/*.js'
+      'test/unit/**/*.js',
+      'app/partials/*.tpl.html'
     ],
 
-    exclude : [
-      'app/lib/angular/angular-loader.js',
-      'app/lib/angular/*.min.js',
-      'app/lib/angular/angular-scenario.js'
-    ],
+    // exclude : [
+    //   'app/lib/angular/*.min.js',
+    //   'app/lib/angular/angular-scenario.js'
+    // ],
 
     autoWatch : true,
 
