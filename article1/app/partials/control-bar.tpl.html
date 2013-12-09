@@ -1,0 +1,19 @@
+<div class="video-controls" style="display: block;">
+	<a class="video-play {{playState}}" title="Play/Pause" ng-click="onPlayPause()"></a>
+	<!-- <a class="video-rewind" title="Rewind 30"></a> -->
+	<div class="video-seek ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all disabled" aria-disabled="false">
+		<div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 0%;">
+		</div>
+		<a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 0%;"></a>
+	</div>
+	<div class="video-timer disabled">{{duration}}</div>
+	<div class="volume-box disabled">
+		<!-- <div class="volume-slider ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+			<div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="height: 100%;">
+			</div>
+			<a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="bottom: 100%;"></a>
+		</div> -->
+		<a class="volume-button {{volumeState}}" title="Mute/Unmute"></a>
+	</div>
+	<a class="fullscreen disabled" title="Full Screen"></a>
+</div>
