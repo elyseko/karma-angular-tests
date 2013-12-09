@@ -34,7 +34,7 @@ describe('Video Player', function(){
 	it(' onPlayPause dispatches playing state', function() {
 		spyOn(rootScope, '$broadcast');
 		scope.onPlayPause();
-		expect(scope.$broadcast).toHaveBeenCalledWith('playStateEvent', 'playing');
+		expect(rootScope.$broadcast).toHaveBeenCalledWith('playStateEvent', 'playing');
 	});
 
 	it(' onPlayPause dispatches playing state', function() {
@@ -43,7 +43,7 @@ describe('Video Player', function(){
 		});
 		spyOn(rootScope, '$broadcast');
 		scope.onPlayPause();
-		expect(scope.$broadcast).toHaveBeenCalledWith('playStateEvent', 'paused');
+		expect(rootScope.$broadcast).toHaveBeenCalledWith('playStateEvent', 'paused');
 	});
 
   });
