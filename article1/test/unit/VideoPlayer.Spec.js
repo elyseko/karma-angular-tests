@@ -50,26 +50,40 @@ describe('Video Player', function(){
 
   describe(' directive', function(){
 
-  	beforeEach(module('partials/video-player.html'));
+  	beforeEach(module('partials/video.tpl.html'));
 
   	var rootScope;
   	var scope;
 	var elm;
 		
 	beforeEach( 
-		inject(function($rootScope, $compile, $templateCache) {
-			scope = $rootScope.new();
+		inject(['$rootScope', '$compile', function($rootScope, $compile) {
+			
+			scope = $rootScope.$new();
 			rootScope = $rootScope;
 			elm = '<video-player></video-player>';
-
-		    $compile(elm)(scope);
+		    elm = $compile(elm)(scope);
 		    scope.$digest();
-		})
+		}])
 	);
 
-	it(' on PLAY_STATE_EVENT == playing, plays the video', function() {
-		rootScope.$broadcast('event::playStateChanged', 'playing');
-		expect(elm[0].playing).toBe(true);
+	it(' on PLAY_STATE_EVENT == playing, the video should play', function() {
+		var video = elm[0];
+		spyOn(video, 'pause');
+		spyOn(video, 'play');
+		rootScope.$broadcast('event::playStateChanged', scope.PLAYING);
+		
+		expect(video.play).toHaveBeenCalled();
+		expect(video.pause).not.toHaveBeenCalled();
+	});
+
+	it(' on PLAY_STATE_EVENT == playing, the video should pause', function() {
+		var video = elm[0];
+		spyOn(video, 'pause');
+		spyOn(video, 'play');
+		rootScope.$broadcast('event::playStateChanged', scope.PAUSED);
+		expect(video.pause).toHaveBeenCalled();
+		expect(video.play).not.toHaveBeenCalled();
 	});
 
   });

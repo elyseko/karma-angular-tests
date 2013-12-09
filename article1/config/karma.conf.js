@@ -3,7 +3,7 @@ module.exports = function(config){
     basePath : '../',
 
     preprocessors: {
-      'app/**/*.tpl.html': ['ng-html2js']
+      'app/partials/*.tpl.html': ['ng-html2js']
     },
 
     ngHtml2JsPreprocessor: {
@@ -18,11 +18,6 @@ module.exports = function(config){
       'test/unit/**/*.js',
       'app/partials/*.tpl.html'
     ],
-
-    // exclude : [
-    //   'app/lib/angular/*.min.js',
-    //   'app/lib/angular/angular-scenario.js'
-    // ],
 
     autoWatch : true,
 
@@ -52,7 +47,8 @@ module.exports = function(config){
             'karma-junit-reporter',
             'karma-chrome-launcher',
             'karma-firefox-launcher',
-            'karma-jasmine'
+            'karma-jasmine',
+            'karma-ng-html2js-preprocessor'
             ],
 
     junitReporter : {
