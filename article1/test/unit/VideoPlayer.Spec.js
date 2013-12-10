@@ -67,10 +67,5 @@ describe('Video Player', function(){
 		})
 	);
 
-	it(' on PLAY_STATE_EVENT == playing, plays the video', function() {
-		rootScope.$broadcast('event::playStateChanged', 'playing');
-		expect(elm[0].playing).toBe(true);
-	});
-
   });
 });
