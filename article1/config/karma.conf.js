@@ -40,6 +40,8 @@ module.exports = function(config){
     // - IE (only Windows)
     browsers : ['Chrome'],
 
+    reporters: ['progress', 'junit'],
+
     // If browser does not capture in given timeout [ms], kill it
     captureTimeout: 60000,
 

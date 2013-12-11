@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="Chrome 31.0.1650 (Mac OS X 10.8.5)" package="unit" timestamp="2013-12-11T23:13:37" id="0" hostname="Elyses-iMac.local" tests="6" errors="0" failures="2" time="0.061">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36"/>
+    </properties>
+    <testcase name=" onPlayPause sets playState to playing" time="0.028" classname="unit Chrome 31.0.1650 (Mac OS X 10.8.5).Video Player  controller"/>
+    <testcase name=" onPlayPause sets playState to paused" time="0.005" classname="unit Chrome 31.0.1650 (Mac OS X 10.8.5).Video Player  controller"/>
+    <testcase name=" onPlayPause dispatches playing state" time="0.003" classname="unit Chrome 31.0.1650 (Mac OS X 10.8.5).Video Player  controller"/>
+    <testcase name=" onPlayPause dispatches playing state" time="0.002" classname="unit Chrome 31.0.1650 (Mac OS X 10.8.5).Video Player  controller"/>
+    <testcase name=" on PLAY_STATE_EVENT == playing, the video should play" time="0.019" classname="unit Chrome 31.0.1650 (Mac OS X 10.8.5).Video Player  directive">
+      <failure type="">Expected spy play to have been called.
+Error: Expected spy play to have been called.
+    at null.&lt;anonymous&gt; (/Users/elysekolker/Dev/Articles/Testing/article1/test/unit/VideoPlayer.Spec.js:76:22)
+</failure>
+      <failure type="">Expected spy pause not to have been called.
+Error: Expected spy pause not to have been called.
+    at null.&lt;anonymous&gt; (/Users/elysekolker/Dev/Articles/Testing/article1/test/unit/VideoPlayer.Spec.js:77:27)
+</failure>
+    </testcase>
+    <testcase name=" on PLAY_STATE_EVENT == paused, the video should pause" time="0.004" classname="unit Chrome 31.0.1650 (Mac OS X 10.8.5).Video Player  directive">
+      <failure type="">Expected spy pause to have been called.
+Error: Expected spy pause to have been called.
+    at null.&lt;anonymous&gt; (/Users/elysekolker/Dev/Articles/Testing/article1/test/unit/VideoPlayer.Spec.js:85:23)
+</failure>
+      <failure type="">Expected spy play not to have been called.
+Error: Expected spy play not to have been called.
+    at null.&lt;anonymous&gt; (/Users/elysekolker/Dev/Articles/Testing/article1/test/unit/VideoPlayer.Spec.js:86:26)
+</failure>
+    </testcase>
+    <system-out><![CDATA[
+]]></system-out>
+    <system-err/>
+  </testsuite>
+</testsuites>
