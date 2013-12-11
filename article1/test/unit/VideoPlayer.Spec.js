@@ -77,7 +77,7 @@ describe('Video Player', function(){
 		expect(video.pause).not.toHaveBeenCalled();
 	});
 
-	it(' on PLAY_STATE_EVENT == playing, the video should pause', function() {
+	it(' on PLAY_STATE_EVENT == paused, the video should pause', function() {
 		var video = elm[0];
 		spyOn(video, 'pause');
 		spyOn(video, 'play');
