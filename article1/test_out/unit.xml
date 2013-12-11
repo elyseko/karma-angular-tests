@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="Chrome 31.0.1650 (Mac OS X 10.8.5)" package="unit" timestamp="2013-12-11T23:00:34" id="0" hostname="Elyses-iMac.local" tests="4" errors="1" failures="4" time="0.038">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36"/>
+    </properties>
+    <testcase name=" onPlayPause sets playState to playing" time="0.027" classname="unit Chrome 31.0.1650 (Mac OS X 10.8.5).Video Player  controller">
+      <failure type="">Expected &apos;pause&apos; to be &apos;playing&apos;.
+Error: Expected &apos;pause&apos; to be &apos;playing&apos;.
+    at null.&lt;anonymous&gt; (/Users/elysekolker/Dev/Articles/Testing/article1/test/unit/VideoPlayer.Spec.js:23:27)
+</failure>
+    </testcase>
+    <testcase name=" onPlayPause sets playState to paused" time="0.004" classname="unit Chrome 31.0.1650 (Mac OS X 10.8.5).Video Player  controller">
+      <failure type="">Expected &apos;pause&apos; to be &apos;paused&apos;.
+Error: Expected &apos;pause&apos; to be &apos;paused&apos;.
+    at null.&lt;anonymous&gt; (/Users/elysekolker/Dev/Articles/Testing/article1/test/unit/VideoPlayer.Spec.js:31:27)
+</failure>
+    </testcase>
+    <testcase name=" onPlayPause dispatches playing state" time="0.004" classname="unit Chrome 31.0.1650 (Mac OS X 10.8.5).Video Player  controller">
+      <failure type="">Expected spy $broadcast to have been called with [ &apos;playStateEvent&apos;, &apos;playing&apos; ] but actual calls were [ &apos;playStateChanged&apos;, &apos;pause&apos; ]
+Error: Expected spy $broadcast to have been called with [ &apos;playStateEvent&apos;, &apos;playing&apos; ] but actual calls were [ &apos;playStateChanged&apos;, &apos;pause&apos; ]
+    at null.&lt;anonymous&gt; (/Users/elysekolker/Dev/Articles/Testing/article1/test/unit/VideoPlayer.Spec.js:37:32)
+</failure>
+    </testcase>
+    <testcase name=" onPlayPause dispatches playing state" time="0.003" classname="unit Chrome 31.0.1650 (Mac OS X 10.8.5).Video Player  controller">
+      <failure type="">Expected spy $broadcast to have been called with [ &apos;playStateEvent&apos;, &apos;paused&apos; ] but actual calls were [ &apos;playStateChanged&apos;, &apos;pause&apos; ]
+Error: Expected spy $broadcast to have been called with [ &apos;playStateEvent&apos;, &apos;paused&apos; ] but actual calls were [ &apos;playStateChanged&apos;, &apos;pause&apos; ]
+    at null.&lt;anonymous&gt; (/Users/elysekolker/Dev/Articles/Testing/article1/test/unit/VideoPlayer.Spec.js:46:32)
+</failure>
+    </testcase>
+    <system-out><![CDATA[
+]]></system-out>
+    <system-err/>
+  </testsuite>
+</testsuites>
