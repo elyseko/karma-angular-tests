@@ -24,7 +24,7 @@ angular.module('myApp.VideoPlayer', []).
   	return {
   		restrict: 'E',
   		replace: true,
-  		templateUrl: 'partials/control-bar.html',
+  		templateUrl: 'partials/control-bar.tpl.html',
   		link: function(scope, element, attrs) {
 
   		}
@@ -35,7 +35,7 @@ angular.module('myApp.VideoPlayer', []).
   		restrict: 'E',
   		replace: true,
   		controller: 'videoPlayerCtrl',
-  		templateUrl: 'partials/video.html',
+  		templateUrl: 'partials/video.tpl.html',
   		link: function(scope, element, attrs) {
         var player = element[0];
 
