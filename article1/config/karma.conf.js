@@ -41,11 +41,14 @@ module.exports = function(config){
     // - IE (only Windows)
     browsers : ['Chrome'],
 
+    reporters: ['progress', 'junit'],
+
     // If browser does not capture in given timeout [ms], kill it
     captureTimeout: 60000,
 
     plugins : [
             'karma-junit-reporter',
+            'karma-html-reporter',
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine'
