@@ -1,0 +1,61 @@
+#html-player {
+	background-color: #000000;
+	display: block;
+	text-align: left;
+}
+
+#play-btn-overlay {
+	background-image: url('../images/playIcon.png');
+	position: absolute;
+	z-index: 9999;
+	width: 80px;
+	height: 129px;
+		-khtml-opacity:.50; 
+		-moz-opacity:.50; 
+		/*-ms-filter:"alpha(opacity=50)";*/
+		filter:alpha(opacity=50);
+		/*//filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.5);*/
+	opacity:0.5;
+}
+
+#play-btn-overlay:hover{
+	z-index: 9999;
+		-khtml-opacity:1; 
+		-moz-opacity:1; 
+		/*-ms-filter:"alpha(opacity=99)";*/
+		filter:alpha(opacity=99);
+		/*filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1.0);*/
+	opacity:1;
+}
+
+#fake-poster {
+	/*background-image: url('../images/playIcon.png');*/
+	background-color: #000000;
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size: contain;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 7;
+	width: 100%;
+	height: 100%;
+}
+
+#no-playback {
+	background-color: #111111;
+	color: #CCCCCC;
+	font-family: sans-serif;
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 50px;
+}
+
+#no-playback a img{
+	outline: none;
+	border: 0;
+}
+
+.hidden {
+	display: none;
+}

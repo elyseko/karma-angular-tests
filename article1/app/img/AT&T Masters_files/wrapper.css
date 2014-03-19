@@ -1,0 +1,300 @@
+/*Temporarily importing CSS for the tabbed container to avoid conflicts..should merge in later */
+@import url("tab-panel.css");
+
+html {
+	color: #FFF;
+	font-family: Arial, Helvetica, Verdana;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	text-decoration: underline;
+	margin: 0 0 5px 0;
+}
+
+a {
+	color: #3C95C2;
+}
+/* GLOBAL COLORS REFERENCE:
+	Piksel Blue Links: ##3C95C2
+	Piksel Dark Blue: #172e40
+	Piksel Medium Blue: #294c6a
+	Piksel Dark Teal: #0c2333
+	Piksel Bright Blue for Interactive Elements:
+	#057fbc
+	Piksel Grey: #1A1E22
+	Piksel Lt Grey: #4E5154
+*/
+#content-wrapper {
+/*** This should be width of the iFrame? or Video Player? ***/
+	margin: 0 auto;
+	width: 960px;
+	display: block;
+}
+
+#content-wrapper.phone {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#content-wrapper.hTablet {
+	margin: 0 auto;
+	padding: 0;
+	width: 1012px;
+	height: 608px;
+}
+
+.hTablet #player-placeholder, .hTablet #placeholder-image {
+	width: 682px;
+	height: 384px;
+	float: right;
+}
+
+.hTablet header {
+	width: 682px;
+	height: 31px;
+	padding: 0;
+	margin: 0;
+	float: right;
+}
+
+.hTablet h1 {
+	text-align: left;
+	text-decoration: none;
+	font-size: 24px;
+	padding: 2px 0 3px;
+	margin: 0;
+}
+
+footer {
+	clear: both;
+}
+
+/* This is a little bit naughty, but to keep current player implementations from breaking,
+we'll add this code that controls player placement in the wrapper's css */
+#player-container {
+	position: relative;
+}
+
+#replayer {
+	background-color: transparent;
+}
+
+
+
+/*** Using 8px as the general spacing and 10px as panel spacing ***/
+#player-placeholder, .ad {
+	margin-bottom: 10px;
+}
+#player-placeholder img {
+	vertical-align: top;
+}
+
+#player-placeholder {
+	width: 960px;
+	height: 513px;
+	display: block;
+}
+
+#placeholder-image {
+	width: 960px;
+	height: 513px;
+}
+
+#player-placeholder.hTablet {
+	width: 682px;
+	height: 384px;
+	display: block;
+}
+
+#placeholder-image.hTablet {
+	width: 682px;
+	height: 384px;
+}
+
+#player-placeholder.phone {
+	width: 320px;
+	height: 180px;
+	display: block;
+}
+
+#placeholder-image.phone {
+	width: 320px;
+	height: 180px;
+}
+
+#tabPanel .panel {
+	margin: 0;
+}
+
+#social-component {
+	margin-bottom: 10px;
+}
+
+.ad {
+	height: 250px;
+}
+
+.hTablet .ad, .hTablet .ad img {
+	width: 216px;
+	height: 180px;
+}
+
+h3 {
+	font-size: 18px;
+	margin: 0 0 8px 0;
+	background-color: #294c6a;
+	padding: 4px 0 4px 8px;
+}
+hr {
+	height: 1px;
+	background-color: #4E5154;
+	border: 0;
+}
+.right {
+	text-align: right;
+}
+.left {
+	text-align: left;
+}
+
+/*** Feed Styles ***/
+.feed a {
+	text-decoration: none;
+	font-size: 14px;
+	color: #ffffff;
+	margin: 4px 9px 0;
+	padding-bottom: 4px;
+	display: inline-block;
+	line-height: 20px;
+}
+.feed p {
+	font-size: 10px;
+	padding: 0;
+	margin: 4px 0 14px 10px;
+	color: #c2c2c2;
+}
+.feed h3 {
+	background: url('../images/yahoo.png') no-repeat 4px 2px #294c6a;
+	padding-left: 96px;
+	margin: 0;
+}
+.feed a:hover {
+	text-decoration: underline;
+}
+
+.feed {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	height: 447px;
+	padding: 8px;
+}
+
+.feed .errorMessage p {
+	font-size: 14px;
+	text-align: center;
+	line-height: 1.4em;
+	margin: 34px 5px 14px 5px;
+}
+
+.feed .errorMessage a {
+	text-decoration: underline;
+	margin: 0;
+}
+
+.feed, .ad, #tabPanel {
+	background-color: #000000;
+}
+
+.feed, .ad {
+	float: right;
+	width: 300px;
+}
+
+.feed .scroller {
+	height: 401px;
+	padding-top: 8px;
+}
+
+.feed .scroller .scrollingContent {
+	height: 400px;
+}
+
+.hTablet .feed {
+	width: 785px;
+	height: 180px;
+	float: none;
+	clear: left;
+}
+
+.hTablet .feed .scroller {
+	height: 134px;
+}
+
+.hTablet .feed-element {
+	width: 753px;
+}
+
+.hTablet .feed h3 {
+	background-color: transparent;
+}
+
+.hTablet .feed a {
+	width: 748px;
+	background-color: #294c6a;
+	margin: 0;
+	padding: 4px 0 4px 6px;
+}
+
+.hTablet .feed p {
+	font-size: 12px;
+	margin: 0 2px 6px 6px;
+	color: #dddddd;
+	line-height: 16px;
+}
+
+.hTablet p.feed-date {
+	color: #a2a2a2;
+	font-size: 10px;
+	margin-bottom: 0;
+	margin-top: 2px;
+}
+
+.hTablet .ps-container .ps-scrollbar-y-rail {
+	right: 0;
+}
+
+/* === Social Component */
+.messageRow { 
+	height: 300px; 
+}
+.messagePortal { 
+	overflow:hidden; 
+	height:300px; 
+	width:100%; 
+	margin: 0;
+}
+
+/*** perfect-scrollbar container css ***/	
+.scroller {
+    overflow-y: hidden;
+    position: relative;
+}
+.schedule .ps-container .ps-scrollbar-y-rail {
+	margin-right: -3px;
+}
+.optional {
+	display: none;
+}
+
+.showOptional .optional {
+	display: inherit;
+}

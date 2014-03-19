@@ -1,0 +1,296 @@
+#replayer {
+	background-color: #000000;
+	display: inline-block;
+	width: auto;
+	height: auto;
+	position: absolute;
+}
+#control-bar {
+	background-color: rgba(0,0,0,.8);/*Alpha set at 80% for now*/
+	margin-right: 46px;
+	position: relative;
+	width: 100%;
+	height: 46px;
+	z-index: 27;
+}
+#control-bar-cntnr {
+	height: 46px;
+}
+#left-btns {
+	position: absolute;
+	top: 0;
+	width: 90px; /*Left Btns Width*/
+}
+#right-btns {
+	position: absolute;
+	width: 134px; /*Right Btns Width*/
+	right: 1px;
+	top: 0;
+}
+.progress-container {
+	padding: 12px 90px 0px 12px;
+	position: relative;
+	width: auto;
+	height: 12px;
+	margin-left: 85px; /*Left Btns Width*/
+	margin-right: 182px; /*Right Btns Width*/
+}
+#progress-bar-wrapper {
+	height: 100%;
+}
+.mobile-progress {
+	height: 44px;
+	padding: 0px 90px 0px 12px;
+	position: relative;
+	top: -3px;
+}
+#live-bar-wrapper {
+	/*background: url('../images/liveBG-fast.gif') repeat-x center center;*/
+	width: 100%;
+	height: 12px;
+	position: relative;
+	top: -3px;
+	pointer-events: none;
+	/*z-index: 7;*/
+}
+#live-bar {
+	background: url('../images/liveBG-fast-desat.gif') repeat-x center center;
+	width: 100%;
+	height: 12px;
+		-khtml-opacity:.50; 
+		-moz-opacity:.50; 
+		-ms-filter:"alpha(opacity=50)";
+		filter:alpha(opacity=50);
+		filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.5);
+	opacity:.50; 
+	position: relative;
+	top: 3px;
+	z-index: 7;
+}
+#live-bar-color {
+	background: #555555;
+	width: 100%;
+	height: 12px;
+	position: relative;
+	top: -9px;
+	z-index: 1;
+	display: block;
+}
+#progress-bar {
+	background-color: #555555;
+	width: 0%; /*this will be controlled dynamically*/
+	height: 100%;//12px;
+	position: relative;
+	z-index: 7;
+	/*top: 4px;*/
+	/*pointer-events: none;*/
+}
+.mobile-progress #progress-bar {
+	top: 0;
+}
+#progress-bar-duration {
+	background-color: #555555;
+	width: 100%;
+	height: 100%;//12px;
+	position: relative;
+	z-index: 1;
+	top: -12px;
+		-khtml-opacity:.20; 
+		-moz-opacity:.20; 
+		-ms-filter:"alpha(opacity=20)";
+		filter:alpha(opacity=20);
+		filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.5);
+	opacity:.20; 
+}
+.mobile-progress #progress-bar-duration {
+	top: -44px;
+}
+#progress-bar-bg {
+	background: rgba(0,0,0,0.5);
+	width: 100%; /*this will be controlled dynamically*/
+	height: 100%; //19px;
+	position: relative;
+	left: 0;
+	top: 4px;
+}
+.timeline-marker {
+	height: 100%;//12px;
+	width: 2px;
+	display: block;
+	background-color: #CCC;
+	position: absolute;
+	/*top: 4px;*/
+	z-index: 14;
+/*	border-top: 4px #CCCCCC solid;
+	border-bottom: 4px #CCCCCC solid;*/
+	margin-left: 0px;
+}
+.mobile-progress .timeline-marker {
+	top: 0;
+}
+/*.timeline-marker:first-of-type {
+	left: 20%;
+}
+.timeline-marker:last-of-type {
+	left: 60%;
+}*/
+.markerHover {
+	//height: 16px; conflicts with new mobile progress bar height
+	width: 4px;
+	display: block;
+	//top: 2px;
+/*	border-bottom: 2px solid #CCCCCC;
+	border-top: 2px solid #CCCCCC;*/
+	//margin-left: -1px;
+}
+#time {
+	color: #fff;
+	text-align: right;
+	position: absolute;
+	top: 14px;
+	right: -42px;
+	font-family: sans-serif;
+	font-size: 14px;
+	display: block;
+}
+/*#readable{
+	display: block;
+	position: relative;
+	background: rgba(0,0,0,0);
+	background-size: 0%;
+	//-webkit-transform: translate3d(0, 0, 0);
+}*/
+#timeScrubDisplay {
+	display: block;
+	background: rgba(0,0,0,0.7);
+	border: 1px solid #666666;
+	width: 100px;
+	color: #FFFFFF;
+	font-family: sans-serif;
+	text-align: center;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	position: relative;
+	top: -46px;
+	left: 54px;
+}
+.mobile-progress #timeScrubDisplay {
+	display: none;
+}
+#play-btn, #rewind-btn, #pause-btn, #fastForward-btn, #play-pause-btn {
+	float: left;
+	height: 44px;
+	width: 44px;
+	overflow: hidden;
+	border-right: 1px solid #666666;
+} 
+#bitrate-btn, #fullscreen-btn {
+	float: right;
+	height: 44px;
+	width: 44px;
+	overflow: hidden;
+	border-left: 1px solid #666666;
+}
+
+#bitrate-btn {
+	background: url('../images/icon_bitrate.png') no-repeat;
+}
+#bitrate-btn.bitrate-1 {
+	background: url('../images/icon_bitrate_1.png') no-repeat;
+}
+#bitrate-btn.bitrate-2 {
+	background: url('../images/icon_bitrate_2.png') no-repeat;
+}
+#bitrate-btn.bitrate-3 {
+	background: url('../images/icon_bitrate_3.png') no-repeat;
+}
+#bitrate-btn.bitrate-4 {
+	background: url('../images/icon_bitrate_4.png') no-repeat;
+}
+#play-pause-btn.paused {
+	background: url('../images/icon_play.png') no-repeat;
+}
+#play-pause-btn.playing {
+	background: url('../images/icon_pause.png') no-repeat;
+}
+/*#play-btn {
+	background: url('../images/icon_play.png') no-repeat;
+}
+#pause-btn {
+	background: url('../images/icon_pause.png') no-repeat;
+}*/
+#rewind-btn {
+	background: url('../images/icon_rewind.png') no-repeat;
+}
+#fastForward-btn {
+	background: url('../images/icon_ff.png') no-repeat;
+}
+#mute-btn {
+	background: url('../images/icon_volume.png') no-repeat;
+}
+#fullscreen-btn {
+	background: url('../images/icon_fullscreen.png') no-repeat;
+}
+#bitrate-btn:hover, #play-btn:hover, #rewind-btn:hover, #pause-btn:hover, #fastForward-btn:hover, #mute-btn:hover, #play-pause-btn:hover, #fullscreen-btn:hover {
+	/*background-color: #555555;*/
+}
+#volume {
+	float: right;
+	/*height: 44px;*/
+	width: 44px;
+	position: relative;
+}
+#mute-btn {
+	height: 44px;
+	width: 44px;
+	border-left: 1px solid #666666;
+	z-index: 92;
+}
+#mute-btn.selected {
+	background: url('../images/icon_volume_muted.png') no-repeat;
+}
+
+#volume-bar-wrapper {
+	height: 75px;
+	width: 18px;
+	border: 3px solid #1B1B1B;
+	margin-top: -125px;
+	margin-left: 11px;
+	z-index: 90;
+	background: #000000;
+	position: relative;
+}
+#volume-bar {
+	background-color: #555555; /*this will be controlled dynamically*/
+	height: 0%; /*this will be controlled dynamically*/
+	width: 100%;
+	position: absolute;//relative;
+	z-index: 7;
+	bottom: 0;//25px; /*this will be controlled dynamically*/
+	pointer-events: none;
+}
+#volume-bar-total {
+	background-color: #555555; /*this will be controlled dynamically*/
+	height: 100%;
+	width: 18px;
+	position: relative;
+	z-index: 1;
+	top: 0; /*needs to = negative val of #volume-bar height */
+	-khtml-opacity:.20; 
+	-moz-opacity:.20; 
+	-ms-filter:"alpha(opacity=20)";
+	filter:alpha(opacity=20);
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.5);
+	opacity:.20; 
+}
+
+#volume, #mute-btn, 
+#mute-btn.selected, #volume-bar-wrapper,
+#volume-bar, #volume-bar-total,
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
